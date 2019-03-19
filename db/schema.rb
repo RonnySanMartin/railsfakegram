@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_19_185230) do
+ActiveRecord::Schema.define(version: 2019_03_19_183248) do
 
   create_table "blocked_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -89,13 +89,12 @@ ActiveRecord::Schema.define(version: 2019_03_19_185230) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.bigint "role_id", default: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "role_id"
-    t.bigint "roles_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["roles_id"], name: "index_users_on_roles_id"
+    t.index ["role_id"], name: "index_users_on_role_id"
   end
 
   add_foreign_key "comments", "images"
@@ -106,5 +105,5 @@ ActiveRecord::Schema.define(version: 2019_03_19_185230) do
   add_foreign_key "like_comments", "users"
   add_foreign_key "like_images", "images"
   add_foreign_key "like_images", "users"
-  add_foreign_key "users", "roles", column: "roles_id"
+  add_foreign_key "users", "roles"
 end
