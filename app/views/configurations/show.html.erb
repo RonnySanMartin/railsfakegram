@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @configuration.name %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @configuration.username %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @configuration.website %>
+</p>
+
+<p>
+  <strong>Biography:</strong>
+  <%= @configuration.biography %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @configuration.phone %>
+</p>
+
+<p>
+  <strong>Privateaccount:</strong>
+  <%= @configuration.privateAccount %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @configuration.user %>
+</p>
+
+<%= link_to 'Edit', edit_configuration_path(@configuration) %> |
+<%= link_to 'Back', configurations_path %>
