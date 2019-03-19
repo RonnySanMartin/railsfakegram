@@ -8,4 +8,11 @@ class User < ApplicationRecord
   has_many :followed_user, :class_name => "FollowedUser", :foreign_key => "followed_user"
   has_many :blocker_user, :class_name => "BlockedUser", :foreign_key => "blocker_user"
   has_many :blocked_user, :class_name => "BlockedUser", :foreign_key => "blocked_user"
+
+  has_many :images
+  has_many :comments
+  has_one :configuration
+
+  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :comments
 end
