@@ -1,19 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Path:</strong>
-  <%= @image.path %>
-</p>
+<%= react_component('ImageShow', {data: @image}) %>
 
-<p>
-  <strong>Alt:</strong>
-  <%= @image.alt %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @image.user %>
-</p>
 
 <%= link_to 'Edit', edit_image_path(@image) %> |
 <%= link_to 'Back', images_path %>
