@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <%= react_component('ImageShow', {data: @image}) %>
+<%= render '/comments/form', comment: @image.comments %>
 
 
 <%= link_to 'Edit', edit_image_path(@image) %> |

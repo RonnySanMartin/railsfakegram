@@ -1,5 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
+import CommentCreateForm from "./CommentCreateForm"
+
 class ImageShow extends React.Component {
   render () {
     return (
@@ -9,16 +11,10 @@ class ImageShow extends React.Component {
           <div>
             <img src={this.props.data.path}/>
           </div>
-          <div>
-
-          </div>
         </div>
       </React.Fragment>
     );
   }
 }
 
-ImageShow.propTypes = {
-  data: PropTypes.array
-};
 export default ImageShow
